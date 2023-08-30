@@ -11,11 +11,11 @@ npm install react-native-cnsa1
 ## Usage
 
 ```js
-import { multiply } from 'react-native-cnsa1';
+import { Input } from 'react-native-cnsa1';
 
 // ...
 
-const result = await multiply(3, 7);
+<Input />;
 ```
 
 ## Contributing

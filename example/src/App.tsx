@@ -1,18 +1,16 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-cnsa1';
+import { StyleSheet, View } from 'react-native';
+import { Input } from 'react-native-cnsa1';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [value, setValue] = React.useState<string>('');
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const onChange = (newValue: string) => setValue(newValue);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Input title="Title" value={value} onChangeText={onChange} />
     </View>
   );
 }
@@ -22,10 +20,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
 });
